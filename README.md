@@ -1,8 +1,8 @@
 # Logic Lounge - ACM Contest Breakdowns
 ---
 
-This is a series in which members of the ACM Student Chapter of BIT Mesra aim to explain the solutions of recent Competitive Programming contests hosted on Codeforces in order to assist less experienced individuals to get an understanding of how to approach problems
+Join ACM Student Chapter's Logic Lounge, a dynamic discussion series where we dissect competitive programming contests. Dive into problem-solving strategies, unravel coding techniques, and foster collaboration in a supportive learning environment. Enhance your skills, engage with peers, and elevate your competitive programming journey with Logic Lounge
 
 # Contests
 ---
-(Codeforces 943 Div 3)[./cf_943_div3]
+(Codeforces 943 Div 3)[https://github.com/AbhirajSinha179/logicLounge/tree/main/cf_943_div3]
