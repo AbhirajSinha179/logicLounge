@@ -5,4 +5,4 @@ Join ACM Student Chapter's Logic Lounge, a dynamic discussion series where we di
 
 # Contests
 ---
-(Codeforces 943 Div 3)[https://github.com/AbhirajSinha179/logicLounge/tree/main/cf_943_div3]
+[Codeforces 943 Div. 3](./cf_943_div3)
