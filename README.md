@@ -4,4 +4,5 @@ Join ACM Student Chapter's Logic Lounge, a dynamic discussion series where we di
 
 # Contests
 
+[Codeforces 944 Div. 4](./cf_944_div4)
 [Codeforces 943 Div. 3](./cf_943_div3)
