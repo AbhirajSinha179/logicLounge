@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/hrita/OneDrive/Documents/logicLounge/.vscode/cf_944_div4",
-      "program": "c:/Users/hrita/OneDrive/Documents/logicLounge/.vscode/cf_944_div4/build/Debug/outDebug",
+      "cwd": "c:/Users/hrita/OneDrive/Documents/logicLounge/cf_944_div4",
+      "program": "c:/Users/hrita/OneDrive/Documents/logicLounge/cf_944_div4/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
