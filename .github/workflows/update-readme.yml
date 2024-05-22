@@ -1,0 +1,47 @@
+name: Update README
+
+on:
+  push:
+    paths:
+      - '**/**/cf_*_div?' # Change this pattern to match your directory naming convention
+
+jobs:
+
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Update README
+      run: |
+        ADDED_DIRS=$(git diff --name-only --diff-filter=A HEAD^ | grep -E '^cf_[0-9]+_div[0-9]$' || true)
+        README_FILE="README.md"
+
+        if [ -n "$ADDED_DIRS" ]; then
+          CONTESTS_HEADER_PATTERN="^## Contests$"
+
+          # Extract the content before and after the "Contests" section
+          BEFORE_CONTESTS=$(sed -n "/${CONTESTS_HEADER_PATTERN}/q;p" "$README_FILE")
+          AFTER_CONTESTS=$(sed -n "/${CONTESTS_HEADER_PATTERN}/,\$p" "$README_FILE" | sed "1d")
+
+          # Create the "Contests" section content with the added links
+          CONTESTS_CONTENT="${BEFORE_CONTESTS}"$'\n'"${CONTESTS_HEADER_PATTERN}"$'\n'
+          for DIR in $ADDED_DIRS; do
+            ROUND_NUMBER=$(echo "$DIR" | cut -d'_' -f2)
+            DIVISION=$(echo "$DIR" | cut -d'_' -f3 | cut -c1-3)
+            LINK_TEXT="[Codeforces ${ROUND_NUMBER} Div ${DIVISION}] (./${DIR})"
+            CONTESTS_CONTENT="${CONTESTS_CONTENT}"$'\n'"${LINK_TEXT}"
+          done
+          CONTESTS_CONTENT="${CONTESTS_CONTENT}"$'\n'"${AFTER_CONTESTS}"
+
+          # Write the updated content to the README file
+          echo "$CONTESTS_CONTENT" > "$README_FILE"
+
+          # Commit and push the changes
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+          git add "$README_FILE"
+          git commit -m "Update README with added contest directories"
+          git push
+        fi
