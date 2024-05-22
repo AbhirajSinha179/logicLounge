@@ -3,7 +3,8 @@ name: Update README
 on:
   push:
     paths:
-      - '**/**/cf_*_div?' # Change this pattern to match your directory naming convention
+      - '**/**/cf_*_div?' 
+      - '**/cf_*_div?'
 
 jobs:
 
